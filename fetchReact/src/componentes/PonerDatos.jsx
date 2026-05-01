@@ -1,8 +1,7 @@
-import { createRoot } from 'react-dom/client'
-
 import {useState, useEffect} from 'react'
+import {Link} from 'react-router-dom'
 
-const api = 'https://restcountries.com/v3.1/all?fields=name,cca3' // problema con api fixeado
+const api = 'https://restcountries.com/v3.1/all?fields=name,cca2' // problema con api fixeado
 export  function PonerDatos() {
     const [countries, setCountries] = useState([]);
     
@@ -15,11 +14,13 @@ export  function PonerDatos() {
 
     return (
         <div>
-            <h1>Los paises son:</h1>
             {countries.map((country) => (
-                <div key={country.cca3}>
+                <div key={country.cca2}>
                     <h2>{country.name.common}</h2>
-                    </div>
+                    <p>{country.cca2}</p>
+                    <Link to={`/countries/${country.cca2}`}>View Details</Link>
+                    
+                </div>
             ))}
                         
         </div>

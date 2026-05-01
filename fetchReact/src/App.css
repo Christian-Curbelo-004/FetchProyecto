@@ -56,6 +56,18 @@
   }
 }
 
+.codigo {
+    font-size: 18px;
+    font-weight: bold;
+    color: #da0000;
+}
+
+
+
+
+
+
+
 #center {
   display: flex;
   flex-direction: column;

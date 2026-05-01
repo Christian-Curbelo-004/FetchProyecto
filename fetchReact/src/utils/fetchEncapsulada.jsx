@@ -59,7 +59,7 @@ export function FetchEncapsulada({ resource, options }) {
   Soluciones:
   1) SetLoading debe estar antes del });
   2) se debe agregar un catch para manejar el error 
-  /* 
+*/ 
    
 
 

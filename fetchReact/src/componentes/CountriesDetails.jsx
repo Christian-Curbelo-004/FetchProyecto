@@ -3,6 +3,7 @@ import {useState, useEffect} from 'react'
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import './CountriesDetails.css';
+import {Context} from './Context.jsx'
 
  // problema con api fixeado
 function countryCodeToFlag(countryCode) {
@@ -11,6 +12,17 @@ function countryCodeToFlag(countryCode) {
         .split('')
         .map(char => 127397 + char.charCodeAt(0));
     return String.fromCodePoint(...codePoints);
+}
+
+function CountryTheme() {
+    const { theme, toggleTheme } = React.useContext(Context);
+    return (
+        <div className="ButtonTheme">
+            <button onClick={theme === 'light' ? toggleTheme : null}>
+                {theme === 'light' ? 'Cambiar a tema oscuro' : 'Cambiar a tema claro'}
+            </button>
+        </div>
+    );
 }
 
 export function CountriesDetails() {
